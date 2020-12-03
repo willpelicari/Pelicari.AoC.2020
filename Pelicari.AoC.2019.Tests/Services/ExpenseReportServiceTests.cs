@@ -1,10 +1,8 @@
 ﻿using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
-using Pelicari.AoC._2020.Config;
 using Pelicari.AoC._2020.Repositories;
 using Pelicari.AoC._2020.Services;
-using System.Collections.Generic;
 
 namespace Pelicari.AoC._2019.Tests.Services
 {
@@ -12,23 +10,19 @@ namespace Pelicari.AoC._2019.Tests.Services
     public class ExpenseReportServiceTests
     {
         private IInputsRepository _inputsRepository;
-        private IDay _dayConfig;
         private ExpenseReportService _expenseReportService;
 
         [TestInitialize]
         public void OnInitialize()
         {
             _inputsRepository = Substitute.For<IInputsRepository>();
-            _dayConfig = Substitute.For<IDay>();
-            _expenseReportService = new ExpenseReportService(_inputsRepository, _dayConfig);
+            _expenseReportService = new ExpenseReportService(_inputsRepository);
         }
 
         [DataTestMethod, DataRow(new[] { "1721", "979", "366", "299", "675", "1456" })]
         public void FindAddendsOfYear_WhenAskedForTwoAddends_ThenTwoCorrectAddendsAreReturned(string[] inputs)
         {
             //Arrange
-            _dayConfig.ChallengeDay.Returns(1);
-            _dayConfig.PuzzleNumber.Returns(1);
             _inputsRepository.GetInputs(day: 1, puzzleNumber: 1).Returns(inputs);
 
             //Act 1721 299
@@ -43,8 +37,6 @@ namespace Pelicari.AoC._2019.Tests.Services
         public void MultiplyAddends_WhenAskedForTwoAddends_ThenReturnMultiplicationResult(string[] inputs)
         {
             //Arrange
-            _dayConfig.ChallengeDay.Returns(1);
-            _dayConfig.PuzzleNumber.Returns(1);
             _inputsRepository.GetInputs(day: 1, puzzleNumber: 1).Returns(inputs);
 
             //Act
@@ -58,8 +50,6 @@ namespace Pelicari.AoC._2019.Tests.Services
         public void FindAddendsOfYear_WhenAskedForThreeAddends_ThenThreeCorrectAddendsAreReturned(string[] inputs)
         {
             //Arrange
-            _dayConfig.ChallengeDay.Returns(1);
-            _dayConfig.PuzzleNumber.Returns(1);
             _inputsRepository.GetInputs(day: 1, puzzleNumber: 1).Returns(inputs);
 
             //Act
@@ -74,8 +64,6 @@ namespace Pelicari.AoC._2019.Tests.Services
         public void MultiplyAddends_WhenAskedForThreeAddends_ThenReturnMultiplicationResult(string [] inputs)
         {
             //Arrange
-            _dayConfig.ChallengeDay.Returns(1);
-            _dayConfig.PuzzleNumber.Returns(1);
             _inputsRepository.GetInputs(day: 1, puzzleNumber: 1).Returns(inputs);
 
             //Act

@@ -1,5 +1,4 @@
-﻿using Pelicari.AoC._2020.Config;
-using Pelicari.AoC._2020.Repositories;
+﻿using Pelicari.AoC._2020.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +8,12 @@ namespace Pelicari.AoC._2020.Services
     public class ExpenseReportService : IExpenseReportService
     {
         private IInputsRepository _inputsRepository;
-        private int _challengeDay;
-        private int _puzzleNumber;
+        private int _challengeDay = 1;
+        private int _puzzleNumber = 1;
 
-        public ExpenseReportService(IInputsRepository inputsRepository, IDay dayConfig)
+        public ExpenseReportService(IInputsRepository inputsRepository)
         {
             _inputsRepository = inputsRepository;
-            _challengeDay = dayConfig.ChallengeDay;
-            _puzzleNumber = dayConfig.PuzzleNumber;
         }
 
         public IEnumerable<int> FindAddendsOfYear(int numberOfAddends)
