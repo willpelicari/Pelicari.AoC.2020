@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pelicari.AoC.2020", "Pelicari.AoC.2020\Pelicari.AoC.2020.csproj", "{9C68734C-13A1-4FFF-BF0E-E14752223EA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pelicari.AoC.2019.Tests", "Pelicari.AoC.2019.Tests\Pelicari.AoC.2019.Tests.csproj", "{75B9715F-0BAD-4454-965A-B9F940565FBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C68734C-13A1-4FFF-BF0E-E14752223EA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C68734C-13A1-4FFF-BF0E-E14752223EA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C68734C-13A1-4FFF-BF0E-E14752223EA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C68734C-13A1-4FFF-BF0E-E14752223EA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75B9715F-0BAD-4454-965A-B9F940565FBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75B9715F-0BAD-4454-965A-B9F940565FBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75B9715F-0BAD-4454-965A-B9F940565FBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75B9715F-0BAD-4454-965A-B9F940565FBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {909F429D-78FF-477B-9E97-5B1E50894CB2}
+	EndGlobalSection
+EndGlobal
