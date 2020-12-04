@@ -4,7 +4,7 @@ namespace Pelicari.AoC._2020.Services
 {
     public interface IExpenseReportService
     {
-        IEnumerable<int> FindAddendsOfYear(int numberOfAddends);
-        int MultiplyAddends(int numberOfAddends);
+        IEnumerable<int> FindAddendsOfYear(IEnumerable<int> inputs, int numberOfAddends);
+        int MultiplyAddends(IEnumerable<string> inputs, int numberOfAddends);
     }
 }

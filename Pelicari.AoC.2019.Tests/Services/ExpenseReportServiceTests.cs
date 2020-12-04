@@ -1,32 +1,26 @@
 ﻿using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NSubstitute;
-using Pelicari.AoC._2020.Repositories;
 using Pelicari.AoC._2020.Services;
+using System.Collections.Generic;
 
 namespace Pelicari.AoC._2019.Tests.Services
 {
     [TestClass]
     public class ExpenseReportServiceTests
     {
-        private IInputsRepository _inputsRepository;
         private ExpenseReportService _expenseReportService;
 
         [TestInitialize]
         public void OnInitialize()
         {
-            _inputsRepository = Substitute.For<IInputsRepository>();
-            _expenseReportService = new ExpenseReportService(_inputsRepository);
+            _expenseReportService = new ExpenseReportService();
         }
 
-        [DataTestMethod, DataRow(new[] { "1721", "979", "366", "299", "675", "1456" })]
-        public void FindAddendsOfYear_WhenAskedForTwoAddends_ThenTwoCorrectAddendsAreReturned(string[] inputs)
+        [DataTestMethod, DataRow(new[] { 1721, 979, 366, 299, 675, 1456 })]
+        public void FindAddendsOfYear_WhenAskedForTwoAddends_ThenTwoCorrectAddendsAreReturned(IEnumerable<int> inputs)
         {
-            //Arrange
-            _inputsRepository.GetInputs(day: 1, puzzleNumber: 1).Returns(inputs);
-
-            //Act 1721 299
-            var result = _expenseReportService.FindAddendsOfYear(numberOfAddends: 2);
+            //Act
+            var result = _expenseReportService.FindAddendsOfYear(inputs, numberOfAddends: 2);
 
             //Assert
             result.Should().HaveCount(2);
@@ -36,24 +30,18 @@ namespace Pelicari.AoC._2019.Tests.Services
         [DataTestMethod, DataRow(new[] { "1721", "979", "366", "299", "675", "1456" })]
         public void MultiplyAddends_WhenAskedForTwoAddends_ThenReturnMultiplicationResult(string[] inputs)
         {
-            //Arrange
-            _inputsRepository.GetInputs(day: 1, puzzleNumber: 1).Returns(inputs);
-
             //Act
-            var result = _expenseReportService.MultiplyAddends(numberOfAddends: 2);
+            var result = _expenseReportService.MultiplyAddends(inputs, numberOfAddends: 2);
 
             //Assert
             result.Should().Be(514579);
         }
 
-        [DataTestMethod, DataRow(new[] { "1721", "979", "366", "299", "675", "1456" })]
-        public void FindAddendsOfYear_WhenAskedForThreeAddends_ThenThreeCorrectAddendsAreReturned(string[] inputs)
+        [DataTestMethod, DataRow(new[] { 1721, 979, 366, 299, 675, 1456 })]
+        public void FindAddendsOfYear_WhenAskedForThreeAddends_ThenThreeCorrectAddendsAreReturned(int[] inputs)
         {
-            //Arrange
-            _inputsRepository.GetInputs(day: 1, puzzleNumber: 1).Returns(inputs);
-
             //Act
-            var result = _expenseReportService.FindAddendsOfYear(numberOfAddends: 3);
+            var result = _expenseReportService.FindAddendsOfYear(inputs, numberOfAddends: 3);
 
             //Assert
             result.Should().HaveCount(3);
@@ -63,11 +51,8 @@ namespace Pelicari.AoC._2019.Tests.Services
         [DataTestMethod, DataRow(new[] { "1721", "979", "366", "299", "675", "1456" })]
         public void MultiplyAddends_WhenAskedForThreeAddends_ThenReturnMultiplicationResult(string [] inputs)
         {
-            //Arrange
-            _inputsRepository.GetInputs(day: 1, puzzleNumber: 1).Returns(inputs);
-
             //Act
-            var result = _expenseReportService.MultiplyAddends(numberOfAddends: 3);
+            var result = _expenseReportService.MultiplyAddends(inputs, numberOfAddends: 3);
 
             //Assert
             result.Should().Be(241861950);

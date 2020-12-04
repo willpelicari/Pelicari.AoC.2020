@@ -11,6 +11,8 @@ namespace Pelicari.AoC._2019.Tests.Solving
     public class Day2
     {
         private ServiceProvider _serviceProvider;
+        private int _challengeDay = 2;
+        private int _puzzleNumber = 1;
 
         [TestInitialize]
         public void OnInitialize()
@@ -27,11 +29,12 @@ namespace Pelicari.AoC._2019.Tests.Solving
         public void Day2_Puzzle1()
         {
             //Arrange
+            var inputs = _serviceProvider.GetService<IInputsRepository>().GetInputs(_challengeDay, _puzzleNumber);
             var policyType = PolicyType.SledRental;
             var passwordPolicyValidationService = _serviceProvider.GetService<IPasswordPolicyValidationService>();
 
             //Act
-            var result = passwordPolicyValidationService.CountNumberOfValidPasswords(policyType);
+            var result = passwordPolicyValidationService.CountNumberOfValidPasswords(inputs, policyType);
 
             //Assert
             result.Should().Be(383);
@@ -41,11 +44,12 @@ namespace Pelicari.AoC._2019.Tests.Solving
         public void Day2_Puzzle2()
         {
             //Arrange
+            var inputs = _serviceProvider.GetService<IInputsRepository>().GetInputs(_challengeDay, _puzzleNumber);
             var policyType = PolicyType.NorthPoleToboggan;
             var passwordPolicyValidationService = _serviceProvider.GetService<IPasswordPolicyValidationService>();
 
             //Act
-            var result = passwordPolicyValidationService.CountNumberOfValidPasswords(policyType);
+            var result = passwordPolicyValidationService.CountNumberOfValidPasswords(inputs, policyType);
 
             //Assert
             result.Should().Be(272);

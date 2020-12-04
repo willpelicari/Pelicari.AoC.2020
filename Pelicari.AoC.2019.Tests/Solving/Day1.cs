@@ -6,10 +6,12 @@ using Pelicari.AoC._2020.Services;
 
 namespace Pelicari.AoC._2019.Tests.Solving
 {
-    [TestClass]
+    [TestClass, ]
     public class Day1
     {
         private ServiceProvider _serviceProvider;
+        private int _challengeDay = 1;
+        private int _puzzleNumber = 1;
 
         [TestInitialize]
         public void OnInitialize()
@@ -26,10 +28,11 @@ namespace Pelicari.AoC._2019.Tests.Solving
         public void Day1_Puzzle1()
         {
             //Arrange
+            var inputs = _serviceProvider.GetService<IInputsRepository>().GetInputs(_challengeDay, _puzzleNumber);
             var expenseReportService = _serviceProvider.GetService<IExpenseReportService>();
 
             //Act
-            var result = expenseReportService.MultiplyAddends(numberOfAddends: 2);
+            var result = expenseReportService.MultiplyAddends(inputs, numberOfAddends: 2);
 
             //Assert
             result.Should().Be(181044);
@@ -39,10 +42,11 @@ namespace Pelicari.AoC._2019.Tests.Solving
         public void Day1_Puzzle2()
         {
             //Arrange
+            var inputs = _serviceProvider.GetService<IInputsRepository>().GetInputs(_challengeDay, _puzzleNumber);
             var expenseReportService = _serviceProvider.GetService<IExpenseReportService>();
 
             //Act
-            var result = expenseReportService.MultiplyAddends(numberOfAddends: 3);
+            var result = expenseReportService.MultiplyAddends(inputs, numberOfAddends: 3);
 
             //Assert
             result.Should().Be(82660352);

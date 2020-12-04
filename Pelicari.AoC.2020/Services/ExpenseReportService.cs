@@ -7,31 +7,17 @@ namespace Pelicari.AoC._2020.Services
 {
     public class ExpenseReportService : IExpenseReportService
     {
-        private IInputsRepository _inputsRepository;
-        private int _challengeDay = 1;
-        private int _puzzleNumber = 1;
-
-        public ExpenseReportService(IInputsRepository inputsRepository)
+        public IEnumerable<int> FindAddendsOfYear(IEnumerable<int> inputs, int numberOfAddends)
         {
-            _inputsRepository = inputsRepository;
-        }
-
-        public IEnumerable<int> FindAddendsOfYear(int numberOfAddends)
-        {
-            var inputs = _inputsRepository.GetInputs(_challengeDay, _puzzleNumber).Select(int.Parse).ToArray();
-            List<int> foundAddends = new List<int>();
             switch (numberOfAddends)
             {
                 case 2:
-                    foundAddends = FindTwoAddends(inputs);
-                    break;
+                    return FindTwoAddends(inputs);
                 case 3:
-                    foundAddends = FindThreeAddends(inputs);
-                    break;
+                    return FindThreeAddends(inputs);
                 default:
                     throw new NotImplementedException();
             }
-            return foundAddends;
         }
 
         private List<int> FindTwoAddends(IEnumerable<int> inputs, int year = 2020)
@@ -51,7 +37,7 @@ namespace Pelicari.AoC._2020.Services
             return null;
         }
 
-        private List<int> FindThreeAddends(int[] inputs)
+        private List<int> FindThreeAddends(IEnumerable<int> inputs)
         {
             List<int> foundAddends = new List<int>();
             foreach (var firstAddend in inputs)
@@ -69,16 +55,17 @@ namespace Pelicari.AoC._2020.Services
             return null;
         }
 
-        public int MultiplyAddends(int numberOfAddends)
+        public int MultiplyAddends(IEnumerable<string> inputs, int numberOfAddends)
         {
+            var intInputs = inputs.Select(int.Parse).ToArray();
             int[] addends;
             switch (numberOfAddends)
             {
                 case 2:
-                    addends = FindAddendsOfYear(numberOfAddends).ToArray();
+                    addends = FindAddendsOfYear(intInputs, numberOfAddends).ToArray();
                     return addends[0] * addends[1];
                 case 3:
-                    addends = FindAddendsOfYear(numberOfAddends).ToArray();
+                    addends = FindAddendsOfYear(intInputs, numberOfAddends).ToArray();
                     return addends[0] * addends[1] * addends[2];
                 default:
                     throw new NotImplementedException();

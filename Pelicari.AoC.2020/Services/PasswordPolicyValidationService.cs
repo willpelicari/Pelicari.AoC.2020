@@ -1,24 +1,15 @@
 ﻿using Pelicari.AoC._2020.Entities;
 using Pelicari.AoC._2020.Repositories;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Pelicari.AoC._2020.Services
 {
     public class PasswordPolicyValidationService : IPasswordPolicyValidationService
     {
-        private IInputsRepository _inputsRepository;
-        private int _challengeDay = 2;
-        private int _puzzleNumber = 1;
-
-        public PasswordPolicyValidationService(IInputsRepository inputsRepository)
+        public int CountNumberOfValidPasswords(IEnumerable<string> inputs, PolicyType policyType)
         {
-            _inputsRepository = inputsRepository;
-        }
-
-        public int CountNumberOfValidPasswords(PolicyType policyType)
-        {
-            var inputs = _inputsRepository.GetInputs(_challengeDay, _puzzleNumber);
             var policies = inputs.Select(i => ParsePolicy(i));
             return policies.Count(p => ValidatePassword(policyType, p));
         }

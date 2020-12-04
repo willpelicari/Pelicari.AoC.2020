@@ -10,14 +10,12 @@ namespace Pelicari.AoC._2019.Tests.Services
     [TestClass]
     public class PasswordPolicyValidatorServiceTests
     {
-        private IInputsRepository _inputsRepository;
         private PasswordPolicyValidationService _passwordPolicyValidationService;
 
         [TestInitialize]
         public void OnInitialize()
         {
-            _inputsRepository = Substitute.For<IInputsRepository>();
-            _passwordPolicyValidationService = new PasswordPolicyValidationService(_inputsRepository);
+            _passwordPolicyValidationService = new PasswordPolicyValidationService();
         }
 
         [TestMethod]
