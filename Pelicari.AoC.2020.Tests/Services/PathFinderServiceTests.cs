@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pelicari.AoC._2020.Entities;
 using Pelicari.AoC._2020.Services;
 
-namespace Pelicari.AoC._2019.Tests.Services
+namespace Pelicari.AoC._2020.Tests.Services
 {
     [TestClass]
     public class PathFinderServiceTests

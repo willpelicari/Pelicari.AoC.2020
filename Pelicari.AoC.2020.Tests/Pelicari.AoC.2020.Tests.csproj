@@ -2,9 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>Pelicari.AoC._2019.Tests</RootNamespace>
+    <RootNamespace>Pelicari.AoC._2020.Tests</RootNamespace>
 
     <IsPackable>false</IsPackable>
+
+    <AssemblyName>Pelicari.AoC.2020.Tests</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

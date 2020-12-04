@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pelicari.AoC.2020", "Pelicari.AoC.2020\Pelicari.AoC.2020.csproj", "{9C68734C-13A1-4FFF-BF0E-E14752223EA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pelicari.AoC.2019.Tests", "Pelicari.AoC.2019.Tests\Pelicari.AoC.2019.Tests.csproj", "{75B9715F-0BAD-4454-965A-B9F940565FBE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pelicari.AoC.2020.Tests", "Pelicari.AoC.2020.Tests\Pelicari.AoC.2020.Tests.csproj", "{75B9715F-0BAD-4454-965A-B9F940565FBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

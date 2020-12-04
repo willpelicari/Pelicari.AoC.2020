@@ -5,7 +5,7 @@ using Pelicari.AoC._2020.Entities;
 using Pelicari.AoC._2020.Repositories;
 using Pelicari.AoC._2020.Services;
 
-namespace Pelicari.AoC._2019.Tests.Solving
+namespace Pelicari.AoC._2020.Tests.Solving
 {
     [TestClass]
     public class Day2
