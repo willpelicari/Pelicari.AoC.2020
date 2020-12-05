@@ -17,5 +17,11 @@ namespace Pelicari.AoC._2020.Repositories
 
             return inputs;
         }
+
+        public string GetBatch(int day, int puzzleNumber)
+        {
+            StreamReader file = new StreamReader($"Inputs/{day:00}-{puzzleNumber:00}.txt");
+            return file.ReadToEnd();
+        }
     }
 }
