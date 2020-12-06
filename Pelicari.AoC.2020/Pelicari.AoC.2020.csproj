@@ -11,6 +11,7 @@
     <None Remove="Inputs\03-01.txt" />
     <None Remove="Inputs\04-01.txt" />
     <None Remove="Inputs\05-01.txt" />
+    <None Remove="Inputs\06-01.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +28,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Inputs\05-01.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inputs\06-01.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
