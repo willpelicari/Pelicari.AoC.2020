@@ -4,6 +4,6 @@ namespace Pelicari.AoC._2020.Services
 {
     public interface IPassportValidationService
     {
-        int CountValidPassports(string fileInput);
+        int CountValidPassports(string fileInput, bool completeValidation = true);
     }
 }

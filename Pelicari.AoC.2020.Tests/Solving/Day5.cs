@@ -30,7 +30,7 @@ namespace Pelicari.AoC._2020.Tests.Solving
         }
 
         [TestMethod]
-        public void Day4_Puzzle1()
+        public void Day5_Puzzle1()
         {
             //Arrange
             var input = _serviceProvider.GetService<IInputsRepository>().GetInputs(_challengeDay, _puzzleNumber);
@@ -46,11 +46,11 @@ namespace Pelicari.AoC._2020.Tests.Solving
             }
 
             //Assert
-            biggestId.Should().Be(882);
+            biggestId.Should().Be(822);
         }
 
         [TestMethod]
-        public void Day4_Puzzle2()
+        public void Day5_Puzzle2()
         {
             //Arrange
             var input = _serviceProvider.GetService<IInputsRepository>().GetInputs(_challengeDay, _puzzleNumber);

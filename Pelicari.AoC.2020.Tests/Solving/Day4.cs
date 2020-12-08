@@ -35,7 +35,7 @@ namespace Pelicari.AoC._2020.Tests.Solving
             var passportValidationService = _serviceProvider.GetService<IPassportValidationService>();
 
             //Act
-            var result = passportValidationService.CountValidPassports(input);
+            var result = passportValidationService.CountValidPassports(input, completeValidation: false);
 
             //Assert
             result.Should().Be(228);

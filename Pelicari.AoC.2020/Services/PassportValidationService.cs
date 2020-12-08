@@ -7,12 +7,12 @@ namespace Pelicari.AoC._2020.Services
 {
     public class PassportValidationService : IPassportValidationService
     {
-        public int CountValidPassports(string fileInput)
+        public int CountValidPassports(string fileInput, bool completeValidation = true)
         {
             int validPassports = 0;
             var passports = ParsePassports(fileInput);
             foreach (var passport in passports)
-                if (IsPassportValid(passport))
+                if (IsPassportValid(completeValidation, passport))
                     validPassports++;
             return validPassports;            
         }
@@ -64,8 +64,16 @@ namespace Pelicari.AoC._2020.Services
             return passports;
         }
 
-        public bool IsPassportValid(Passport passport)
+        public bool IsPassportValid(bool completeValidation, Passport passport)
         {
+            if (!completeValidation)
+                return !string.IsNullOrEmpty(passport?.BirthYear) &&
+                    !string.IsNullOrEmpty(passport?.IssueYear) &&
+                    !string.IsNullOrEmpty(passport?.ExpirationYear) &&
+                    !string.IsNullOrEmpty(passport?.Height) &&
+                    !string.IsNullOrEmpty(passport?.HairColor) &&
+                    !string.IsNullOrEmpty(passport?.EyeColor) &&
+                    !string.IsNullOrEmpty(passport?.PassportId);
             return
                 ValidBirthYear(passport?.BirthYear) &&
                 ValidIssueYear(passport?.IssueYear) &&
